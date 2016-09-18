@@ -46,12 +46,12 @@ class prune_users extends base
 	 * @param config			$config
 	 */
 	public function __construct(
-		user					$user,
-		config					$config,
-		driver_interface		$db,
-		log_interface			$log,
-								$root_path,
-								$php_ext
+		user $user,
+		config $config,
+		driver_interface $db,
+		log_interface $log,
+		$root_path,
+		$php_ext
 	)
 	{
 		$this->user				= $user;
