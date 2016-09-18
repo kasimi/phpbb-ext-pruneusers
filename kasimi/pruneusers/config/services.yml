@@ -1,0 +1,18 @@
+services:
+    kasimi.pruneusers.listener:
+        class: kasimi\pruneusers\event\listener
+        tags:
+            - { name: event.listener }
+    kasimi.pruneusers.cron.prune_users:
+        class: kasimi\pruneusers\cron\prune_users
+        arguments:
+            - @user
+            - @config
+            - @dbal.conn
+            - @log
+            - %core.root_path%
+            - %core.php_ext%
+        calls:
+            - [set_name, [cron.task.kasimi_prune_users]]
+        tags:
+            - { name: cron.task }

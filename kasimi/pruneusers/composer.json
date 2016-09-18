@@ -1,0 +1,27 @@
+{
+	"name": "kasimi/pruneusers",
+	"type": "phpbb-extension",
+	"description": "Delete all user accounts that are older than a adjustable amount of time",
+	"homepage": "https://github.com/kasimi/phpbb-ext-pruneusers",
+	"version": "1.0.0",
+	"time": "2016-09-18",
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "kasimi",
+			"email": "mail@kasimi.net",
+			"homepage": "https://kasimi.net",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3",
+		"phpbb/phpbb": ">=3.1.0-b1"
+	},
+	"extra": {
+		"display-name": "Prune Users",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.0-b1"
+		}
+	}
+}
