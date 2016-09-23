@@ -82,7 +82,7 @@ class prune_users extends base
 				include($this->root_path . 'includes/functions_user.' . $this->php_ext);
 			}
 
-			//user_delete('remove', array_keys($prune_users), false);
+			user_delete('remove', array_keys($expired_users), false);
 
 			$this->add_admin_log('LOG_PRUNEUSERS', array(
 				count($expired_users),
@@ -107,7 +107,7 @@ class prune_users extends base
 		$sql = 'SELECT u.user_id, u.username
 				FROM ' . USERS_TABLE . ' u
 				WHERE u.user_type = ' . USER_NORMAL . '
-					AND u.user_regdate < ' . (int) $lifetime;
+					AND u.user_lastvisit < ' . (int) $lifetime;
 		$result = $this->db->sql_query($sql);
 
 		$expired_users = array();

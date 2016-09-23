@@ -34,7 +34,7 @@ if (empty($lang) || !is_array($lang))
 // ’ » “ ” …
 
 $lang = array_merge($lang, array(
-	'PRUNEUSERS_LIFETIME'	=> 'Maximum lifetime of a user account',
+	'PRUNEUSERS_LIFETIME'	=> 'Users whose last activity was before this amount of time will be deleted',
 	'LOG_PRUNEUSERS_NONE'	=> '<strong>No users pruned</strong>',
 	'LOG_PRUNEUSERS'		=> '<strong>Pruned %1$d users</strong><br />» %2$s',
 ));
