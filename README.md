@@ -3,7 +3,7 @@ phpBB 3.1 Extension - Prune Users
 
 [![Build Status](https://travis-ci.org/kasimi/phpbb-ext-pruneusers.svg?branch=master)](https://travis-ci.org/kasimi/phpbb-ext-pruneusers)
 
-This extension periodically deletes user accounts simply based on their date of registration. The extension adds a new option in `ACP -> General -> Board features` that allows you to configure the amount of time after which a user account is deleted. The cron task runs once every hour.
+This extension periodically deletes user accounts whose last activity was before an adjustable amount of time. The extension adds a new option in `ACP -> General -> Board features` that allows you to configure the amount of time after which a user account is deleted. The cron task runs once every hour. This means one hour is the minimum amount of time that should be specified in the ACP.
 
 ## Requirements
 * phpBB 3.1.0-b1 or higher
