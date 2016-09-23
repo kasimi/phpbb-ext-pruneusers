@@ -84,6 +84,8 @@ class prune_users extends base
 
 			user_delete('remove', array_keys($expired_users), false);
 
+			update_last_username();
+
 			$this->add_admin_log('LOG_PRUNEUSERS', array(
 				count($expired_users),
 				implode($this->user->lang('COMMA_SEPARATOR'), $expired_users),
