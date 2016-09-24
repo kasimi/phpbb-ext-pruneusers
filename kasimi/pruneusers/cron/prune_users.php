@@ -109,6 +109,7 @@ class prune_users extends base
 		$sql = 'SELECT u.user_id, u.username
 				FROM ' . USERS_TABLE . ' u
 				WHERE u.user_type = ' . USER_NORMAL . '
+					AND u.user_id <> ' . ANONYMOUS . '
 					AND u.user_lastvisit < ' . (int) $lifetime;
 		$result = $this->db->sql_query($sql);
 
