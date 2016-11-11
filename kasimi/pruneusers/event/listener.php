@@ -42,7 +42,7 @@ class listener implements EventSubscriberInterface
 
 	/**
 	 * @param Event $event
-	 * @param array $options Required keys: mode,after,configs
+	 * @param array $options Required keys: mode,position,configs
 	 */
 	protected function inject_configs($event, $options)
 	{
