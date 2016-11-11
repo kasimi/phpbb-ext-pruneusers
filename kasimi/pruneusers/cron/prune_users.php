@@ -10,11 +10,11 @@
 
 namespace kasimi\pruneusers\cron;
 
-use phpbb\cron\task\base;
-use phpbb\user;
 use phpbb\config\config;
+use phpbb\cron\task\base;
 use phpbb\db\driver\driver_interface;
 use phpbb\log\log_interface;
+use phpbb\user;
 
 class prune_users extends base
 {
@@ -120,6 +120,8 @@ class prune_users extends base
 			$expired_users[(int) $row['user_id']] = $row['username'];
 		}
 		$this->db->sql_freeresult($result);
+
+		asort($expired_users);
 
 		return $expired_users;
 	}
