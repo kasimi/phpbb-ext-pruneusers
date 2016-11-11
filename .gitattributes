@@ -2,7 +2,8 @@
 * text=auto
 
 # Ignore files in releases
-/travis
 .gitignore export-ignore
 .gitattributes export-ignore
+phpunit.xml.dist export-ignore
 .travis.yml export-ignore
+/travis export-ignore
