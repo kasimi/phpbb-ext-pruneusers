@@ -1,10 +1,10 @@
 {
 	"name": "kasimi/pruneusers",
 	"type": "phpbb-extension",
-	"description": "Delete all user accounts whose last activity was before an adjustable amount of time",
+	"description": "This extension deletes user accounts whose last activity was before an adjustable amount of time. Founders, inactive accounts and bots are ignored.",
 	"homepage": "https://github.com/kasimi/phpbb-ext-pruneusers",
-	"version": "1.0.1",
-	"time": "2016-09-23",
+	"version": "1.0.2",
+	"time": "2016-11-11",
 	"license": "GPL-2.0",
 	"authors": [
 		{
