@@ -34,7 +34,14 @@ if (empty($lang) || !is_array($lang))
 // ’ » “ ” …
 
 $lang = array_merge($lang, array(
-	'PRUNEUSERS_LIFETIME'	=> 'Users whose last activity was before this amount of time will be deleted',
-	'LOG_PRUNEUSERS_NONE'	=> '<strong>No users pruned</strong>',
-	'LOG_PRUNEUSERS'		=> '<strong>Pruned %1$d users</strong><br />» %2$s',
+	'PRUNEUSERS_LIFETIME'			=> 'Expiry time of user accounts',
+	'PRUNEUSERS_LIFETIME_EXPLAIN'	=> 'Leave empty to disable.',
+	'PRUNEUSERS_MODE'				=> 'Action to perform on expired user accounts',
+	'PRUNEUSERS_MODE_0'				=> 'Delete users and delete posts',
+	'PRUNEUSERS_MODE_1'				=> 'Delete users and retain posts',
+	'PRUNEUSERS_MODE_2'				=> 'Deactivate users',
+	'PRUNEUSERS_USERNAMES'			=> 'Retain usernames when retaining posts',
+	'PRUNEUSERS_USERNAMES_EXPLAIN'	=> 'If set to no, affected posts will be changed to the guest user.',
+	'LOG_PRUNEUSERS_NONE'			=> '<strong>No users pruned</strong>',
+	'LOG_PRUNEUSERS'				=> '<strong>Pruned %1$d users</strong><br />» %2$s',
 ));

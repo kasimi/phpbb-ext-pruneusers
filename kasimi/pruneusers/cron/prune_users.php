@@ -18,6 +18,10 @@ use phpbb\user;
 
 class prune_users extends base
 {
+	const MODE_REMOVE_USERS_DELETE_POSTS = 0;
+	const MODE_REMOVE_USERS_RETAIN_POSTS = 1;
+	const MODE_DEACTIVATE_USERS = 2;
+
 	/** @var user */
 	protected $user;
 
@@ -64,14 +68,10 @@ class prune_users extends base
 
 	/**
 	 * Runs this cron task.
-	 *
-	 * @return null
 	 */
 	public function run()
 	{
-		$this->user->add_lang(array(
-			'common',
-		));
+		$this->user->add_lang('common');
 
 		$expired_users = $this->get_expired_users();
 
@@ -82,9 +82,20 @@ class prune_users extends base
 				include($this->root_path . 'includes/functions_user.' . $this->php_ext);
 			}
 
-			user_delete('remove', array_keys($expired_users), false);
+			switch ($this->config['kasimi_pruneusers_mode'])
+			{
+				case self::MODE_REMOVE_USERS_DELETE_POSTS:
+					user_delete('remove', array_keys($expired_users), (bool) $this->config['kasimi_pruneusers_usernames']);
+					break;
 
-			update_last_username();
+				case self::MODE_REMOVE_USERS_RETAIN_POSTS:
+					user_delete('retain', array_keys($expired_users), (bool) $this->config['kasimi_pruneusers_usernames']);
+					break;
+
+				case self::MODE_DEACTIVATE_USERS:
+					user_active_flip('deactivate', array_keys($expired_users));
+					break;
+			}
 
 			$this->add_admin_log('LOG_PRUNEUSERS', array(
 				count($expired_users),
