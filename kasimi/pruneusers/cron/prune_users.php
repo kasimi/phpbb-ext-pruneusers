@@ -143,7 +143,7 @@ class prune_users extends base
 	 */
 	protected function add_admin_log($lang_key, $additional_data = array())
 	{
-		$this->log->add('admin', $this->user->data['user_id'], $this->user->data['session_ip'], $lang_key, false, $additional_data);
+		$this->log->add('admin', $this->user->data['user_id'], $this->user->ip, $lang_key, false, $additional_data);
 	}
 
 	/**
