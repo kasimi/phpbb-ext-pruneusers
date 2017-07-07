@@ -3,8 +3,8 @@
 	"type": "phpbb-extension",
 	"description": "This extension deletes or deactivates user accounts whose last activity was before an adjustable amount of time. Administrators can decide whether to keep or retain posts, and whether to keep or retain usernames when retaining posts. Founders, inactive accounts and bots are ignored. The settings can be found under ACP → General → Board features.",
 	"homepage": "https://github.com/kasimi/phpbb-ext-pruneusers",
-	"version": "1.1.0",
-	"time": "2017-05-29",
+	"version": "1.1.1",
+	"time": "2017-07-07",
 	"license": "GPL-2.0",
 	"authors": [
 		{
